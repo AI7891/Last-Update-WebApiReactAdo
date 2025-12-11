@@ -4,7 +4,7 @@ using System.Data.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
-const string CONNECTION_STRING = "Data Source=ICT-204-00;Initial Catalog=astro_db;Integrated Security=True;Trust Server Certificate=True";
+const string CONNECTION_STRING = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30";
 
 // Add services to the container (C'est magic -> On vera ca en dev :p)
 builder.Services.AddTransient<PlanetRepository>();

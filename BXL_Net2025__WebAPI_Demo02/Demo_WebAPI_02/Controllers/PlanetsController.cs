@@ -52,7 +52,6 @@ namespace Demo_WebAPI_02.Controllers
                 No_Moon = result.NbMoon,
                 DiscoveryPlanetDate = result.DiscoveryDate,
                 SolarSystemID = result.SolarSystemId 
-
             }
             );
             
