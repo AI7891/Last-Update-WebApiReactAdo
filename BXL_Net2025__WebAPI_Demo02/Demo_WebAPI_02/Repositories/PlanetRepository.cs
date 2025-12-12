@@ -30,7 +30,8 @@ public class PlanetRepository
 
     public Planet Insert(Planet planet)
     {
-        string query = " OUTPUT [inserted].[id], [inserted].[name], [inserted].[desc], [inserted].[nb_moon] as [nbmoon], [inserted].[discovery_date] as [discoverydate], [inserted].[solar_system_id] AS [SolarSystemId]" +
+        string query = "INSERT INTO [planet] ([name], [desc], [nb_moon], [discovery_date], [solar_system_id])" +
+                       " OUTPUT [inserted].[id], [inserted].[name], [inserted].[desc], [inserted].[nb_moon], [inserted].[discovery_date], [inserted].[solar_system_id] AS [SolarSystemId]" +
                        " VALUES (@Name, @Desc, @NbMoon, @DiscoveryDate, @SolarSystemId);";
 
         return _dbConnection.QuerySingle<Planet>(query, planet);
